@@ -1,15 +1,15 @@
-import { Text, Button, Stack } from "@mantine/core";
 import { ThemeProvider } from "./ThemeProvider";
+import CreateJoke from "./components/CreateJoke";
+import JokesList from "./components/JokesList";
+import { Routes, Route } from "react-router-dom";
 
 export default function App() {
   return (
     <ThemeProvider>
-      <Stack align="center" mt={50}>
-        <Text size="xl" weight={500}>
-          Welcome to Mantine!
-        </Text>
-        <Button>Click the button</Button>
-      </Stack>
+				<Routes>
+						<Route path="/create" element={<CreateJoke />} />
+						<Route path="/" element={<JokesList />} />
+				</Routes>
     </ThemeProvider>
   );
 }
